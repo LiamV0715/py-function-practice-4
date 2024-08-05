@@ -54,17 +54,16 @@ def pascal(n):
     print(triangle[0])
   else:
     row_number = 2
-    #fill up correct number of rows in triangle
+    #fill correct number of rows
     while len(triangle) < n:
       row = []
       row_prev = triangle[row_number - 1]
-      #create correct row, then add to triangle (this row will be 1 longer than row before it)
+      #create correct row, then add to overall triangle 
       length = len(row_prev)+1
       for i in range(length):
-        #first number is 1
         if i == 0:
           row.append(1)
-        #intermediate nunmbers get added from previous rows
+        #previous rows getting added
         elif i > 0 and i < length-1:
           row.append(triangle[row_number-1][i-1]+triangle[row_number-1][i])
         #last number is 1
@@ -77,5 +76,5 @@ def pascal(n):
     for row in triangle:
       print(row)
 
-pascal(2)
-pascal(5)
+pascal(1)
+pascal(4)
